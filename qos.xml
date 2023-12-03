@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <profiles>
+
+    <topic profile_name="topic_qos">
+      <historyQos>
+        <kind>KEEP_LAST</kind>
+        <depth>20</depth>
+      </historyQos>
+
+      <resourceLimitsQos>
+        <max_samples>500</max_samples>
+        <max_instances>2</max_instances>
+        <max_samples_per_instance>100</max_samples_per_instance>
+        <allocated_samples>20</allocated_samples>
+        <extra_samples>10</extra_samples>
+      </resourceLimitsQos>
+    </topic>
+
+    <data_writer profile_name="writer_qos">
+      <topic profile_name="topic_qos">
+        <historyQos>
+          <kind>KEEP_LAST</kind>
+          <depth>20</depth>
+        </historyQos>
+
+        <resourceLimitsQos>
+          <max_samples>500</max_samples>
+          <max_instances>2</max_instances>
+          <max_samples_per_instance>100</max_samples_per_instance>
+          <allocated_samples>20</allocated_samples>
+          <extra_samples>10</extra_samples>
+        </resourceLimitsQos>
+      </topic>
+
+      <qos>
+
+        <deadline>
+          <period>
+            <sec>2</sec>
+            <nanosec>0</nanosec>
+          </period>
+        </deadline>
+
+        <durability>
+          <kind>VOLATILE</kind>
+        </durability>
+
+        <lifespan>
+          <duration>
+            <sec>44100</sec>
+            <nanosec>0</nanosec>
+          </duration>
+        </lifespan>
+
+        <liveliness>
+          <kind>AUTOMATIC</kind>
+          <lease_duration>
+            <sec>DURATION_INFINITY</sec>
+            <nanosec>0</nanosec>
+          </lease_duration>
+          <announcement_period>
+            <sec>1</sec>
+          </announcement_period>
+        </liveliness>
+
+        <ownership>
+          <kind>EXCLUSIVE</kind>
+        </ownership>
+
+        <reliability>
+          <kind>BEST_EFFORT</kind>
+          <max_blocking_time>
+            <sec>0</sec>
+            <nanosec>100000000</nanosec>
+          </max_blocking_time>
+        </reliability>
+
+        <latencyBudget>
+          <duration>
+            <sec>21</sec>
+            <nanosec>0</nanosec>
+          </duration>
+        </latencyBudget>
+
+        <!-- <transportPriority>
+       <value>50</value>
+       </transportPriority> -->
+
+        <!-- <destinationOrder>
+          <kind>BY_SOURCE_TIMESTAMP</kind>
+        </destinationOrder>
+
+        <durabilityService> 
+          <history_kind>KEEP_LAST</history_kind>
+          <history_depth>20</history_depth>
+          <max_instances>LENGTH_UNLIMITED</max_instances>
+          <max_samples>LENGTH_UNLIMITED</max_samples>
+          <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
+          <service_cleanup_delay>
+            <sec>0</sec>
+            <nanosec>0</nanosec>
+          </service_cleanup_delay>
+        </durabilityService> -->
+
+      </qos>
+
+    </data_writer>
+
+    <data_reader profile_name="reader_qos">
+      <topic profile_name="topic_qos">
+        <historyQos>
+          <kind>KEEP_LAST</kind>
+          <depth>20</depth>
+        </historyQos>
+
+        <resourceLimitsQos>
+          <max_samples>500</max_samples>
+          <max_instances>2</max_instances>
+          <max_samples_per_instance>100</max_samples_per_instance>
+          <allocated_samples>20</allocated_samples>
+          <extra_samples>10</extra_samples>
+        </resourceLimitsQos>
+      </topic>
+
+      <qos>
+
+        <deadline>
+          <period>
+            <sec>2</sec>
+            <nanosec>0</nanosec>
+          </period>
+        </deadline>
+
+        <durability>
+          <kind>VOLATILE</kind>
+        </durability>
+
+        <lifespan>
+          <duration>
+            <sec>44100</sec>
+            <nanosec>0</nanosec>
+          </duration>
+        </lifespan>
+
+        <liveliness>
+          <kind>AUTOMATIC</kind>
+          <lease_duration>
+            <sec>DURATION_INFINITY</sec>
+            <nanosec>0</nanosec>
+          </lease_duration>
+        </liveliness>
+
+        <!-- <latency_budget>
+          <duration>
+            <sec>21</sec>
+            <nanosec>0</nanosec>
+          </duration>
+        </latency_budget> -->
+
+        <ownership>
+          <kind>EXCLUSIVE</kind>
+        </ownership>
+
+        <reliability>
+          <kind>BEST_EFFORT</kind>
+          <max_blocking_time>
+            <sec>0</sec>
+            <nanosec>100000000</nanosec>
+          </max_blocking_time>
+        </reliability>
+
+        <!-- <destination_order>
+          <kind>BY_SOURCE_TIMESTAMP</kind>
+        </destination_order> -->
+
+        <!-- <transport_priority>
+          <value>50</value>
+        </transport_priority> -->
+
+        <!-- <durability_service>
+          <history_kind>KEEP_LAST</history_kind>
+          <history_depth>450</history_depth>
+          <max_instances>LENGTH_UNLIMITED</max_instances>
+          <max_samples>LENGTH_UNLIMITED</max_samples>
+          <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
+          <service_cleanup_delay>
+            <sec>0</sec>
+            <nanosec>0</nanosec>
+          </service_cleanup_delay>
+        </durability_service> -->
+
+      </qos>
+
+    </data_reader>
+
+  </profiles>
+</dds>
