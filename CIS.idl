@@ -1,0 +1,35 @@
+
+typedef long Time;
+
+enum SourceIdEnum
+    {
+        WCS, 
+        TTPS,
+        TMA, 
+        CIS  
+    };
+
+enum NavigationModeEnum
+    {
+        MANUAL,
+        SYSTEM
+    };
+
+struct Time2
+    {
+        unsigned long year;
+        unsigned long month;
+        unsigned long day;
+        unsigned long hour;
+        unsigned long minute;
+        unsigned long second;
+        unsigned long millisecond;
+    };
+
+@default struct SystemTime : Time2
+    {
+        Time2 localTime;
+        NavigationModeEnum mode;
+    };
+
+
