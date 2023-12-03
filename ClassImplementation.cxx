@@ -109,7 +109,7 @@
 //         // DomainParticipantQos participantQos;
 //         // participantQos.name("Participant_publisher");
 //         RTPS_DllAPI::ReturnCode_t ret =
-//             factory->load_XML_profiles_file("/home/wesee/ePro_RW/qos.xml");
+//             factory->load_XML_profiles_file("/home/rajat/Downloads/eProsima_CODE/ePro_RW/qos.xml");
 //         if (ret == RTPS_DllAPI::ReturnCode_t::RETCODE_ERROR)
 //         {
 //             std::cout << "RETCODE_ERROR" << std::endl;
